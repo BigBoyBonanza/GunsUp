@@ -41,22 +41,22 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Crouch"))
         {
             speed = crouchSpeed;
-            vision.fieldOfView -= 5;
+            //vision.fieldOfView -= 5;
         }
         if (Input.GetButtonUp("Crouch"))
         {
             speed = walkspeed;
-            vision.fieldOfView += 5;
+            //vision.fieldOfView += 5;
         }
         if (Input.GetButtonDown("Sprint"))
         {
             speed = sprint;
-            vision.fieldOfView += 5;
+            //vision.fieldOfView += 5;
         }
         if(Input.GetButtonUp("Sprint"))
         {
             speed = walkspeed;
-            vision.fieldOfView -= 5;
+            //vision.fieldOfView -= 5;
         }
 
         if(!isGrounded)

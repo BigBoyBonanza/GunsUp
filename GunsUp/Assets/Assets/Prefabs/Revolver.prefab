@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1816826612171805332}
   - component: {fileID: 8532691574619642056}
   - component: {fileID: 5181303696308139160}
-  - component: {fileID: 3800667727238994734}
+  - component: {fileID: 6232304984287779629}
   m_Layer: 0
   m_Name: AmmoCylinder
   m_TagString: Untagged
@@ -239,20 +239,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3800667727238994734
-MeshCollider:
+--- !u!114 &6232304984287779629
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2452804941477754922}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 7679458859398664115, guid: b1de25d3b043cda4c8968c354c998ef1, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940aa7b375a052c40934c0b93078dbb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2477701205427495805
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +448,6 @@ GameObject:
   - component: {fileID: 8860399312456107182}
   - component: {fileID: 6383284545340093381}
   - component: {fileID: 1743553306444547426}
-  - component: {fileID: 7110245491567923089}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -518,20 +515,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7110245491567923089
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3364365008828799965}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8653722315008560443, guid: b1de25d3b043cda4c8968c354c998ef1, type: 3}
 --- !u!1 &4161426715470611940
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +805,6 @@ GameObject:
   - component: {fileID: 6934191816627453734}
   - component: {fileID: 3497215148180629855}
   - component: {fileID: 5439454650231657385}
-  - component: {fileID: 2508072208174301813}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -890,20 +872,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2508072208174301813
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6683865836907965631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 8164388750953057965, guid: b1de25d3b043cda4c8968c354c998ef1, type: 3}
 --- !u!1 &6771622998228731800
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +883,6 @@ GameObject:
   - component: {fileID: 2779453994646184882}
   - component: {fileID: 332591588351490949}
   - component: {fileID: 2597596353118946206}
-  - component: {fileID: 3577763789423830423}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -986,20 +953,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3577763789423830423
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6771622998228731800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 2941274158721294118, guid: b1de25d3b043cda4c8968c354c998ef1, type: 3}
 --- !u!1 &6998371059790190043
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,11 +7,14 @@ public class WeaponManager : MonoBehaviour
     public Transform WeaponPos;
     public Transform NormPos;
     public Transform ADSPos;
-    public Transform RelodPos;
+    public Transform ReloadPos;
 
     public Camera aiming;
 
+    //disables aim during some actions
     public bool canFire = true;
+    private bool isAiming = false;
+    private bool isReloading = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,24 +28,69 @@ public class WeaponManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && canFire)
         {
-            WeaponPos.position = ADSPos.position;
-            aiming.fieldOfView = 25;
+            isAiming = true;
         }
         if (Input.GetButtonUp("Fire2") && canFire)
         {
-            WeaponPos.position = NormPos.position;
-            aiming.fieldOfView = 60;
-
+            isAiming = false;
         }
         if (Input.GetButtonDown("Reload") && canFire)
         {
-            WeaponPos.position = RelodPos.position;
-            WeaponPos.rotation = RelodPos.rotation;
+            //WeaponPos.position = RelodPos.position;
+            //WeaponPos.rotation = RelodPos.rotation;
+            isReloading = true;
         }
         if (Input.GetButtonUp("Reload") && canFire)
         {
-            WeaponPos.position = NormPos.position;
-            WeaponPos.rotation = NormPos.rotation;
+            //WeaponPos.position = NormPos.position;
+            //WeaponPos.rotation = NormPos.rotation;
+            isReloading = false;
         }
+    }
+
+    private void LateUpdate()
+    {
+        updateGun();
+        //updateWeaponBob();
+        //updateWeaponRecoil();
+        //weapon position will be combination of aim position, recoil, and weapon bob
+        //WeaponPos.position = WeaponPos.position;        
+    }
+
+    private void updateGun()
+    {
+        if (isAiming && canFire)
+        {
+            //WeaponPos.position = ADSPos.position;
+            WeaponPos.position = Vector3.Lerp(WeaponPos.position, ADSPos.position, 20f * Time.deltaTime);
+            //aiming.fieldOfView = 25;
+            updateFOV(Mathf.Lerp(aiming.fieldOfView, 25f, 10f * Time.deltaTime));
+        }
+        else if (isReloading && canFire)
+        {
+
+            //WeaponPos.position = ReloadPos.position;
+            //WeaponPos.rotation = ReloadPos.rotation;
+            WeaponPos.position = Vector3.Lerp(WeaponPos.position, ReloadPos.position, 20f * Time.deltaTime);
+            WeaponPos.rotation = Quaternion.Lerp(WeaponPos.rotation, ReloadPos.rotation, 20f * Time.deltaTime);
+        }
+        else
+        {
+            //WeaponPos.position = NormPos.position;
+            WeaponPos.position = Vector3.Lerp(WeaponPos.position, NormPos.position, 20f * Time.deltaTime);
+            //aiming.fieldOfView = 60;
+            updateFOV(Mathf.Lerp(aiming.fieldOfView, 60f, 10f * Time.deltaTime));
+            //WeaponPos.rotation = NormPos.rotation;
+            WeaponPos.rotation = Quaternion.Lerp(WeaponPos.rotation, NormPos.rotation, 20f * Time.deltaTime);
+        }
+    }
+
+    public void updateFOV(float fov)
+    {
+        aiming.fieldOfView = fov;
+    }
+    private void reloading()
+    {
+
     }
 }
