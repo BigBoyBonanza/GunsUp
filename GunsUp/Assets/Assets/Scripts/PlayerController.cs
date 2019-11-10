@@ -42,11 +42,13 @@ public class PlayerController : MonoBehaviour
         {
             speed = crouchSpeed;
             //vision.fieldOfView -= 5;
+            controller.height -= 1.0f;
         }
         if (Input.GetButtonUp("Crouch"))
         {
             speed = walkspeed;
             //vision.fieldOfView += 5;
+            controller.height += 1.0f;
         }
         if (Input.GetButtonDown("Sprint"))
         {

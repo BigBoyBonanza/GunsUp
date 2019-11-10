@@ -10,6 +10,8 @@ public class WeaponManager : MonoBehaviour
     public Transform ReloadPos;
 
     public Camera aiming;
+    public AmmoManager ammoCylinder;
+
 
     //disables aim during some actions
     public bool canFire = true;
@@ -20,12 +22,15 @@ public class WeaponManager : MonoBehaviour
     void Start()
     {
         WeaponPos.position = NormPos.position;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetButtonDown("Fire1") && canFire)
+        {
+            shoot();
+        }
         if (Input.GetButtonDown("Fire2") && canFire)
         {
             isAiming = true;
@@ -39,6 +44,7 @@ public class WeaponManager : MonoBehaviour
             //WeaponPos.position = RelodPos.position;
             //WeaponPos.rotation = RelodPos.rotation;
             isReloading = true;
+            reloading();
         }
         if (Input.GetButtonUp("Reload") && canFire)
         {
@@ -91,6 +97,15 @@ public class WeaponManager : MonoBehaviour
     }
     private void reloading()
     {
+        ammoCylinder.reload();
 
+    }
+    private void shoot()
+    {
+        ammoCylinder.shoot();
+        //will check if there are bullets from the ammo manager
+        //if there are will rotate cylinder
+        //shoots and removes bullet from view
+        //
     }
 }

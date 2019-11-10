@@ -10,18 +10,32 @@ public class AmmoManager : MonoBehaviour
     public GameObject bullet4;
     public GameObject bullet5;
     public GameObject bullet6;
+    public GameObject cylinder;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void shoot()
+    {
+        //bullet1.GetComponent<Renderer>().enabled = false;
+        MeshRenderer variable = bullet1.GetComponent<MeshRenderer>();
+        variable.enabled = false;
+    }
+
+    public void reload()
+    {
+        MeshRenderer variable = bullet1.GetComponent<MeshRenderer>();
+        variable.enabled = true;
     }
 
     //when trigger is pulled "FIRE1"
